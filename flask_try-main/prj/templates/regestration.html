@@ -1,0 +1,64 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend >join today</legend>
+                <div class="form-group">
+                    {{ form.user_name.label(class="form-control-label") }}
+
+                    {% if form.user_name.errors %}
+                        {{ form.user_name(class="form-control form-control-lg  is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.user_name.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.user_name(class="form-control form-control-lg") }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{form.Email.label (class="form-contorl-label" )}}
+                    {% if form.Email.errors%}
+                        {{ form.Email(class="form-control is-invalid") }}
+
+                        <div class="invalid-feedback">
+                            {% for error in form.Email.errors%}
+                              <span> {{error}}</span>
+                            {%endfor%}
+                        </div>
+                     
+                    {%else%}
+                    {{form.Email(class="form-control form-control-lg")}}
+                    {%endif%}
+
+                </div>
+                <div class="form-group">
+                    {{form.pass_word.label (class="form-contorl-label")}}
+                    {{form.pass_word (class="form-control form-control-lg")}}
+
+                </div>
+                <div class="form-group">
+                    {{form.confirm_pass.label (class="form-contorl-label")}}
+                    {{form.confirm_pass (class="form-control form-control-lg")}}
+
+                </div>
+               
+            </fieldset>
+            <div class="form-group">
+                {{form.submit(class="btn btn-outline-info")}}
+            </div>
+
+        </form>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                already have account?? <a class="ml-2" href="{{url_for('login')}}" >sing in </a>
+
+            </small>
+        </div>
+
+    </div>
+{% endblock %}

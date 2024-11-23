@@ -1,0 +1,1 @@
+{"virtualbox":{"/home/vagrant/app":{"guestpath":"/home/vagrant/app","hostpath":"/home/rebbouh/devops_team/flask_try-main","disabled":false,"__vagrantfile":true},"/vagrant":{"guestpath":"/vagrant","hostpath":"/home/rebbouh/devops_team/1st_task","disabled":false,"__vagrantfile":true}}}

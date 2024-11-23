@@ -1,0 +1,58 @@
+{% extends "layout.html"%}
+{% block content%}
+    <div class="content-section">
+        {{form.hidden_tag()}}
+        <form method="post" action="">
+            <fieldset  class="form-group">
+                <legend >Log In</legend>
+                <div class="form-group">
+                    {{form.Email.label(class="from-control-label")}}
+                    {% if form.Email.errors%} 
+                        {{ form.Email(class="form-control form-control-lg is-invalid") }}
+                        {% for error in from.Email.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+
+                    {%else%}
+                        {{ form.Email(class="form-control form-control-lg") }}
+
+                    {%endif%}                                    
+
+                </div>
+                <div class="form-group">
+                    {{form.pass_word.label(class="from-control-label")}}
+                    {% if form.pass_word.errors%} 
+                        {{ form.pass_word(class="form-control form-control-lg is-invalid") }}
+                        {% for error in from.Email.errors%}
+                            <span>{{error}}</span>
+                        {%endfor%}
+                    {%else%}
+                        {{ form.pass_word(class="form-control form-control-lg") }}
+
+                    {%endif%}
+                    
+
+                </div>        
+                <div class="form-check">
+                    {{form.remember(class="from-check-input")}}
+                    {{form.remember.label(class="form-check-label")}}
+
+                </div>
+                <div class="form-group">
+                    {{form.submit(class="btn btn-outline-info")}}
+
+                </div>           
+
+
+
+            </fieldset>
+
+
+
+
+        </form>     
+
+
+
+    </div>
+{%endblock%}

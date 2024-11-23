@@ -1,0 +1,8 @@
+{% extends "layout.html"%}
+{% block content %}
+  {% for post in posts %}
+    <h1> name:{{post.name}}</h1>
+    <h1> family name:{{post.fname}}</h1>
+    <h1> age:{{post.age}}</h1>
+  {% endfor %}
+{% endblock%}
